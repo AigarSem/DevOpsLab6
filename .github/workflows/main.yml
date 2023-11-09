@@ -1,0 +1,17 @@
+name: Clone the repo and use make to build Hello.c
+
+on: [push]
+
+jobs:
+  cloneRepo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.1
+      
+      - name: Clone the repo and cd to it
+        run: |
+          git clone https://github.com/AigarSem/DevOpsLab6.git
+          cd DevOpsLab6
+
+      - name: Build the app
+        run: make
